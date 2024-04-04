@@ -16,7 +16,7 @@ header {
     background-color: #3a8278;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 50px 0;
 }
 
 footer {
@@ -114,4 +114,15 @@ footer .footer-section h3 {
     object-fit: contain;
     /* Ensure the SVGs fit within the card */
     border-radius: 10px;
+}
+@media (max-width: 1024px) {
+    /* Hide the navbar links */
+    nav .navbar-nav {
+        display: none;
+    }
+
+    /* Show the hamburger menu toggle button */
+    nav .navbar-toggler {
+        display: block;
+    }
 }
