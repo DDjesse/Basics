@@ -9,7 +9,7 @@
                 <h3>Quick Links</h3>
                 <ul class="list-unstyled">
                     <li><a href="#" class="text-dark">Home</a></li>
-                    <li><a href="#" class="text-dark">About</a></li>
+                    <li><a href="#" class="text-dark">Abossut</a></li>
                     <li><a href="#" class="text-dark">Contact</a></li>
                 </ul>
             </div>

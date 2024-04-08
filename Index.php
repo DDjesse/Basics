@@ -24,41 +24,37 @@
     <header>
      
     </header>
-
     <main class="container mt-4">
     <h2>Kies je keuze</h2>
-    <div class="card-container">
-        <a href="#" class="clickable-card" onclick="showFoodContent()">
-            <div class="card">
-                <div class="card-body">
-                    <img src="assets/food_image.svg" alt="Food Image" class="svg-image">
-                </div>
-            </div>
-        </a>
-        <a href="#" class="clickable-card" onclick="showBodyContent()">
-            <div class="card">
-                <div class="card-body">
-                    <img src="assets/body_image.svg" alt="Body Image" class="svg-image">
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="card-container">
-        <a href="#" class="clickable-card" onclick="showMindContent()">
-            <div class="card">
-                <div class="card-body">
-                    <img src="assets/mind_image.svg" alt="Mind Image" class="svg-image">
-                </div>
-            </div>
-        </a>
-        <a href="#" class="clickable-card" onclick="showExerciseContent()">
-            <div class="card">
-                <div class="card-body">
-                    <img src="assets/exercise_image.svg" alt="Exercise Image" class="svg-image">
-                </div>
-            </div>
-        </a>
-    </div>
+    <?php
+// Connect to your database
+// Example: $db = new mysqli('localhost', 'username', 'password', 'database_name');
+
+// Query to retrieve card information from the database
+$query = "SELECT * FROM cards";
+$result = $db->query($query);
+
+// Check if there are any rows in the result
+if ($result->num_rows > 0) {
+    // Loop through each row and output card HTML
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="card-container">';
+        echo '<div class="card">';
+        echo '<div class="card-body">';
+        echo '<img src="' . $row['image_url'] . '" alt="' . $row['name'] . '" class="svg-image">';
+        echo '<p>' . $row['name'] . '</p>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+    }
+} else {
+    echo "No cards found.";
+}
+
+// Close database connection
+$db->close();
+?>
+
 </main>
 
 
