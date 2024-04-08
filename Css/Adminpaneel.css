@@ -1,0 +1,75 @@
+/* Input Styles */
+.image-upload {
+                    position: relative;
+                    display: inline-block;
+                    width: 100px;
+                    height: 100px;
+                    border: 2px dashed #ddd;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    cursor: pointer;
+                    transition: border-color 0.3s ease;
+                }
+                
+                .upload-icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 36px;
+                    color: #007bff;
+                }
+                
+                input[type="file"] {
+                    opacity: 0;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    cursor: pointer;
+                }
+                
+                input[type="file"]:focus {
+                    outline: none;
+                    border-color: #66afe9;
+                }
+                
+                /* Submit Button Styles */
+                button {
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    color: #fff;
+                    background-color: #007bff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+                
+                button:hover {
+                    background-color: #0056b3;
+                }
+                
+                /* Animation */
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                .form-group, button {
+                    animation: fadeIn 0.5s ease forwards;
+                }
+                
+                .whitebox-container {
+                    display: flex;
+                    justify-content: space-between; /* Adjust as needed */
+                    flex-wrap: wrap; /* Allow boxes to wrap to the next line if needed */
+                }
+                

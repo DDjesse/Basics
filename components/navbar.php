@@ -1,6 +1,6 @@
 <div style="text-align: center; position: relative;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="Index.php">
             <img src="Assets/Patyna.svg" width="400" height="400" class="d-inline-block align-top" style="position: absolute; top: -100px; left: 50px;" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
