@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$database = "PatynasDB"; // Your database name
+$username = "root";
+$password = ""; // If you're using a password, provide it here
+$database = "PatynaDB"; // Your database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);

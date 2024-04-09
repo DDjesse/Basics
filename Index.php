@@ -26,36 +26,56 @@
     </header>
     <main class="container mt-4">
     <h2>Kies je keuze</h2>
+    <style>
+        /* Custom CSS for reducing horizontal space between cards */
+        .card-container {
+            margin-bottom: 20px; /* Adjust the margin bottom to reduce space between cards */
+        }
+        .card {
+            margin-right: 10px; /* Adjust the margin right to reduce space between cards */
+            margin-left: 10px; /* Adjust the margin left to reduce space between cards */
+        }
+    </style>
     <?php
-// Connect to your database
-// Example: $db = new mysqli('localhost', 'username', 'password', 'database_name');
+    // Include the database connection file
+    include 'db_connect.php';
 
-// Query to retrieve card information from the database
-$query = "SELECT * FROM cards";
-$result = $db->query($query);
+    // Query to retrieve card information from the database
+    $query = "SELECT * FROM cards";
+    $result = $conn->query($query);
 
-// Check if there are any rows in the result
-if ($result->num_rows > 0) {
-    // Loop through each row and output card HTML
-    while ($row = $result->fetch_assoc()) {
-        echo '<div class="card-container">';
-        echo '<div class="card">';
-        echo '<div class="card-body">';
-        echo '<img src="' . $row['image_url'] . '" alt="' . $row['name'] . '" class="svg-image">';
-        echo '<p>' . $row['name'] . '</p>';
+    // Check if there are any rows in the result
+    if ($result->num_rows > 0) {
+        // Open a Bootstrap row
+        echo '<div class="row">';
+
+        // Loop through each row and output card HTML
+        while ($row = $result->fetch_assoc()) {
+            // Start a Bootstrap column
+            echo '<div class="col-md-4">'; // Each card takes up half the width on medium screens
+            echo '<div class="card-container">';
+            echo '<div class="card">';
+            echo '<div class="card-body">';
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" alt="' . $row['name'] . '" class="svg-image">';
+            echo '<p>' . $row['name'] . '</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>'; // Close the Bootstrap column
+        }
+
+        // Close the Bootstrap row
         echo '</div>';
-        echo '</div>';
-        echo '</div>';
+    } else {
+        echo "No cards found.";
     }
-} else {
-    echo "No cards found.";
-}
 
-// Close database connection
-$db->close();
-?>
+    // Close database connection
+    $conn->close();
+    ?>
 
 </main>
+
 
 
 

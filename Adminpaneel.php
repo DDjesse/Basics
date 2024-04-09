@@ -1,4 +1,36 @@
-<?php include 'db_connect.php'; ?> <!-- Include the database connection file -->
+<?php
+// Include the database connection file
+include 'db_connect.php';
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if image file is uploaded
+    if (isset($_FILES["imageUpload"]) && $_FILES["imageUpload"]["error"] == 0) {
+        // Prepare and bind parameters
+        $stmt = $conn->prepare("INSERT INTO cards (name, image) VALUES (?, ?)");
+        $stmt->bind_param("ss", $name, $image);
+
+        // Get form data
+        $name = $_POST["name"];
+        $image = file_get_contents($_FILES["imageUpload"]["tmp_name"]);
+
+        // Execute SQL statement
+        if ($stmt->execute()) {
+            echo "New record created successfully.";
+            // Redirect to prevent form resubmission
+            header("Location: ".$_SERVER['PHP_SELF']);
+            exit();
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        // Close statement and connection
+        $stmt->close();
+    } else {
+        echo "Error uploading file.";
+    }
+}
+?>
 
 <nav style="text-align: center;">
     <?php include 'components/navbar.php'; ?>
@@ -35,7 +67,7 @@
     </header>
 
     <main class="container mt-4">
-        <form action="add_card.php" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="imageUpload" class="image-upload">
                     <input type="file" class="form-control-file" id="imageUpload" name="imageUpload" onchange="previewImage(event)">

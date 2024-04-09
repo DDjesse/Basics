@@ -1,133 +1,133 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.container {
-    max-width: 800px;
-    text-align: center;
-    /* Add this line */
-}
-
-header {
-    background-color: #3a8278;
-    color: #fff;
-    text-align: center;
-    padding: 50px 0;
-}
-
-footer {
-    background-color: #e5a522;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-
-main {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    flex-grow: 1;
-    text-align: center;
-}
-
-
-
-
-footer .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer .footer-section {
-    flex: 1;
-    padding: 10px;
-}
-
-footer .footer-section h3 {
-    margin-bottom: 10px;
-}
-
-.custom-color {
-    color: #3a8278;
-    /* Set color code */
-}
-
-
-
-.card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    /* Add space between card containers */
-    perspective: 1000px;
-    /* Set the perspective */
-}
-
-.card {
-    width: 200px;
-    /* Set the width of the cards */
-    height: 300px;
-    /* Set the height of the cards */
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    margin: 10px;
-    /* Add margin around each card */
-}
-
-/* Add the animation CSS here */
-.clickable-card .card {
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease-in-out;
-}
-
-.clickable-card:hover .card {
-    transform: scale(1.1);
-    /* Adjust the scale factor as needed */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-    /* Add a box shadow for a more 3D effect */
-}
-
-
-
-.card-body {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-}
-.card-body p {
-    color: black; /* Text color */
-    font-weight: bold; /* Bold font */
-    margin-bottom: 10px; /* Add some bottom space */
-}
-
-.svg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* Ensure the SVGs fit within the card */
-    border-radius: 10px;    
-}
-@media (max-width: 1024px) {
-    /* Hide the navbar links */
-    nav .navbar-nav {
-        display: none;
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
-    /* Show the hamburger menu toggle button */
-    nav .navbar-toggler {
-        display: block;
+    .container {
+        max-width: 800px;
+        text-align: center;
+        /* Add this line */
     }
-}
+
+    header {
+        background-color: #3a8278;
+        color: #fff;
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    footer {
+        background-color: #e5a522;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+
+    main {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+
+
+
+    footer .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer .footer-section {
+        flex: 1;
+        padding: 10px;
+    }
+
+    footer .footer-section h3 {
+        margin-bottom: 10px;
+    }
+
+    .custom-color {
+        color: #3a8278;
+        /* Set color code */
+    }
+
+
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        /* Add space between card containers */
+        perspective: 1000px;
+        /* Set the perspective */
+    }
+
+    .card {
+        width: 200px;
+        /* Set the width of the cards */
+        height: 300px;
+        /* Set the height of the cards */
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+        margin: 10px;
+        /* Add margin around each card */
+    }
+
+    /* Add the animation CSS here */
+    .clickable-card .card {
+        transform-style: preserve-3d;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .clickable-card:hover .card {
+        transform: scale(1.1);
+        /* Adjust the scale factor as needed */
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        /* Add a box shadow for a more 3D effect */
+    }
+
+
+
+    .card-body {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    }
+    .card-body p {
+        color: black; /* Text color */
+        font-weight: bold; /* Bold font */
+        margin-bottom: 10px; /* Add some bottom space */
+    }
+
+    .svg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        /* Ensure the SVGs fit within the card */
+        border-radius: 10px;    
+    }
+    @media (max-width: 1024px) {
+        /* Hide the navbar links */
+        nav .navbar-nav {
+            display: none;
+        }
+
+        /* Show the hamburger menu toggle button */
+        nav .navbar-toggler {
+            display: block;
+        }
+    }
